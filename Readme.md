@@ -1,4 +1,4 @@
-# Microservices Application
+# Tech challenge BE
 
 This project is designed with two microservices that communicate via a message bus. It includes:
 
