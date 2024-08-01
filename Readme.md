@@ -32,8 +32,7 @@ This project is designed with two microservices that communicate via a message b
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/umair-afzal-uat/symfony_task.git
    ```
 
 2. **Build and Run Containers**
