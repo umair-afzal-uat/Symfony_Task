@@ -1,0 +1,8 @@
+# config/test/messenger.yaml
+framework:
+    messenger:
+        transports:
+            async:
+                dsn: 'in-memory://'
+        routing:
+            'App\Message\UserCreatedMessage': async

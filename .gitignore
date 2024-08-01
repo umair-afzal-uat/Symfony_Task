@@ -1,0 +1,3 @@
+# Ignore vendor directories in specific subdirectories
+/notifications-service/vendor/
+/users-service/vendor/
