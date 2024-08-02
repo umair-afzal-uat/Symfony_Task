@@ -9,6 +9,6 @@ services:
       volumes:
       - ./:/var/www
       networks:
-      - dev1
+      - dev
 networks:
-  dev1:
+  dev:
