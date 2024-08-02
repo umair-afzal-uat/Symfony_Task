@@ -37,9 +37,29 @@ This project is designed with two microservices that communicate via a message b
 
 2. **Build and Run Containers**
 
-   ```bash
-   docker-compose up --build
-   ```
+    - **Users Service**
+
+     ```bash
+     cd users-service
+     docker-compose build
+     docker-compose up -d
+     docker exec -it php8 bash
+     composer install
+     php bin/console doctrine:migrations:migrate
+     symfony serve -d
+     The users-service is available at http://127.0.0.1:9000
+     ```
+     - **Notifications Service**
+
+     ```bash
+     cd notifications-service
+     docker-compose build
+     docker-compose up -d
+     docker exec -it php8 bash
+     composer install
+     symfony serve -d
+     The users-service is available at http://127.0.0.1:9001
+     ```
 
 3. **Local Setup**
 

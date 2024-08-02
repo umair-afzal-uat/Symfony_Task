@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Controller;
 
 use App\Entity\User;
@@ -20,6 +21,13 @@ class UserController extends AbstractController
         $this->entityManager = $entityManager;
         $this->bus = $bus;
     }
+    /**
+     * @Route("/", name="home", methods={"GET"})
+     */
+    public function index(): Response
+    {
+        return $this->render('default/index.html.twig');
+    }
 
     /**
      * @Route("/users", name="create_user", methods={"POST"})
@@ -31,7 +39,7 @@ class UserController extends AbstractController
         $user->setEmail($data['email']);
         $user->setFirstName($data['firstName']);
         $user->setLastName($data['lastName']);
-        
+
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 

@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+
+  php8:
+      container_name: users-service
+      build: docker
+      ports:
+          - "9000:8000"
+      volumes:
+          - ./:/var/www
+      networks:
+      - dev
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_name
+    ports:
+      - 3306:3306
+    networks:
+      - dev
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: sf_phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: db
+    networks:
+      - dev
+networks:
+  dev:
