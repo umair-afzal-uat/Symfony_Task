@@ -17,14 +17,14 @@ This project is designed with two microservices that communicate via a message b
 ├── users-service
 │   ├── src
 │   ├── Dockerfile
-│   └── ...
+│   └── docker-compose.yml
 ├── notifications-service
 │   ├── src
 │   ├── Dockerfile
-│   └── ...
-├── docker-compose.yml
+│   └── docker-compose.yml
 ├── README.md
-└── ...
+├── ...
+
 ```
 
 ## Installation
