@@ -121,12 +121,16 @@ The codebase includes:
 1. **For Users Service**
 
    ```bash
-   docker-compose exec users-service ./vendor/bin/phpunit
+   cd users-service
+   php bin/console doctrine:database:create --env=test
+   php bin/console doctrine:migrations:migrate --env=test
+   php bin/phpunit
    ```
 
    For Local
 
    ```bash
+   cd users-service
    php bin/console doctrine:database:create --env=test
    php bin/console doctrine:migrations:migrate --env=test
    php bin/phpunit

@@ -14,7 +14,7 @@
     <php>
         <env name="APP_ENV" value="test"/>
         <!-- Use SQLite in-memory database for faster tests -->
-        <env name="DATABASE_URL" value="mysql://root@127.0.0.1:3306/symf"/>
+        <env name="DATABASE_URL" value="mysql://root:root@db:3306/db_name"/>
         <!-- Use InMemoryTransport for Messenger testing -->
         <env name="MESSENGER_TRANSPORT_DSN" value="in-memory://"/>
         <env name="KERNEL_CLASS" value="App\Kernel"/>
