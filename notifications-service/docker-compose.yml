@@ -1,14 +1,14 @@
 version: "3.8"
 services:
 
-  php8:
+  notifications:
       container_name: notifications-service
       build: docker
       ports:
-          - "9001:8000"
+          - "9001:8001"
       volumes:
-          - ./:/var/www
+      - ./notifications:/var/www
       networks:
-      - dev
+      - dev1
 networks:
-  dev:
+  dev1:

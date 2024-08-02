@@ -57,7 +57,7 @@ This project is designed with two microservices that communicate via a message b
      docker-compose up -d
      docker exec -it php8 bash
      composer install
-     symfony serve -d
+     symfony serve --port=8001 -d
      The notifications-service is available at http://127.0.0.1:9001
      ```
 
