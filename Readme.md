@@ -17,13 +17,13 @@ This project is designed with two microservices that communicate via a message b
 ├── users-service
 │   ├── src
 │   ├── Dockerfile
-│   └── docker-compose.yml
+│   
 ├── notifications-service
 │   ├── src
 │   ├── Dockerfile
-│   └── docker-compose.yml
+│ 
 ├── README.md
-├── ...
+├── docker-compose.yml
 
 ```
 
@@ -40,9 +40,7 @@ This project is designed with two microservices that communicate via a message b
     - **Users Service**
 
      ```bash
-     cd users-service
-     docker-compose build
-     docker-compose up -d
+     docker-compose up --build
      docker exec -it users-service bash
      composer install
      php bin/console doctrine:migrations:migrate
@@ -52,9 +50,7 @@ This project is designed with two microservices that communicate via a message b
      - **Notifications Service**
 
      ```bash
-     cd notifications-service
-     docker-compose build
-     docker-compose up -d
+     docker-compose up --build
      docker exec -it notifications-service bash
      composer install
      symfony serve --port=8001 -d

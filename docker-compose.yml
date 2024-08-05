@@ -1,15 +1,25 @@
 version: "3.8"
 services:
 
-  php8:
+  users:
       container_name: users-service
-      build: docker
+      build: ./users-service/docker
       ports:
           - "9000:8000"
       volumes:
-          - ./:/var/www
+          - ./users-service:/var/www
       networks:
       - dev
+  notifications:
+      container_name: notifications-service
+      build: ./notifications-service/docker
+      ports:
+          - "9001:8001"
+      volumes:
+          - ./notifications-service:/var/www
+      networks:
+      - dev     
+
   db:
     image: mysql:latest
     environment:
