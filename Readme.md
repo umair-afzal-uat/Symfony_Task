@@ -55,10 +55,14 @@ This project is designed with two microservices that communicate via a message b
      cd notifications-service
      docker-compose build
      docker-compose up -d
-     docker exec -it php8 bash
+     docker exec -it notifications-service bash
      composer install
      symfony serve --port=8001 -d
      The notifications-service is available at http://127.0.0.1:9001
+     To listen messages
+     docker exec -it notifications-service bash
+     php bin/console messenger:consume async
+
      ```
 
 3. **Local Setup**
@@ -79,6 +83,9 @@ This project is designed with two microservices that communicate via a message b
      cd notifications-service
      composer install
      symfony server:start
+     To listen messages
+     docker exec -it notifications-service bash
+     php bin/console messenger:consume async
      ```
 
 ## Endpoints
