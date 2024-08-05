@@ -50,7 +50,6 @@ This project is designed with two microservices that communicate via a message b
      - **Notifications Service**
 
      ```bash
-     docker-compose up --build
      docker exec -it notifications-service bash
      composer install
      symfony serve --port=8001 -d
